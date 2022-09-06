@@ -13,7 +13,7 @@ let initialState = {
       normalizedName: 'food',
     },
   ],
-  active: '',
+  active: 'food',
 };
 
 function categoryReducer(state = initialState, action) {

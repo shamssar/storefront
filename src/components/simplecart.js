@@ -1,11 +1,7 @@
 import { connect } from 'react-redux';
 
 function SimpleCart(props) {
-  // let data = props.cart.cart.map(item => {
-  //   return { name: item.name, count: 1 };
-  // });
 
-  // console.log(data);
   console.log('props', props);
   return (
     <>

@@ -1,19 +1,17 @@
-import {createStore, combineReducers} from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore, combineReducers } from 'redux';
 
-import products from './products';
-import categories from './categories';
-let reducers = combineReducers({products, categories});
+import categoryReducer from './categories';
+import productReducer from './products';
+import cartReducer from './cart';
+
+let reducers = combineReducers({
+  categories: categoryReducer,
+  products: productReducer,
+  cart: cartReducer,
+});
 
 const store = () => {
-    return createStore(reducers, composeWithDevTools())
-}
+  return createStore(reducers);
+};
 
-export default store();
-
-export const change = (name) =>{
-    return {
-        type: 'Change',
-        payload: name
-    }
-}
+export default store;

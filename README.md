@@ -9,9 +9,9 @@ This app will show static products when choosing a category.
 
 
 
-[Deployed Link](https://sweet-croissant-c7fd71.netlify.app/#)
+[Deployed Link](https://tangerine-fudge-6cc109.netlify.app/)
 
-[pull request](https://github.com/shamssar/storefront/pull/1)
+[pull request](https://github.com/shamssar/storefront/pull/3)
 
 
 

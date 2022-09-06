@@ -1,30 +1,61 @@
-const initialState = {
-    allProducts: [
-      {category: 'food', name: 'pizza', description: 'Italian food', price: '12 JD', inventory: 100},
-      {category: 'food', name: 'Burger', description: 'American food', price: '10 JD', inventory: 100},
-      
-      {category: 'electronics', name: 'Camera', description: 'For images and/or video', price: '100 JD', inventory: 20},
+let initialState = {
+  products: [
+    {
+      name: 'iPhone',
+      category: 'Electronics',
+      description: 'expensive communication device',
+      price: 999,
+      inventory: 10,
+      categoryId: '1',
+    },
+    {
+      name: 'PS5',
+      category: 'Electronics',
+      description: 'gaming console',
+      price: 500,
+      inventory: 10,
+      categoryId: '1',
+    },
+    {
+      name: 'bananas',
+      category: 'Food',
+      description: 'monkeys love them',
+      price: 5,
+      inventory: 10,
+      categoryId: '3',
+    },
+    {
+      name: 'salmon',
+      category: 'Food',
+      description: 'full of omega-3',
+      price: 10,
+      inventory: 10,
+      categoryId: '3',
+    },
+  ],
+};
 
-    {category: 'electronics', name: 'Laptop', description: 'Mac Laptop', price: '100 JD', inventory: 25},
-    ],
-    displayedProducts: []
+function productReducer(state = initialState, action) {
+  let { type, payload } = action;
+
+  switch (type) {
+    case 'UPDATE_INVENTORY':
+      let products = state.products.map(product => {
+        if (product.name === payload) {
+          return { ...product, inventory: product.inventory - 1 };
+        } else {
+          return product;
+        }
+      });
+
+      return { products };
+
+    case 'RESET_INVENTORY':
+      return initialState;
+
+    default:
+      return state;
   }
-   export default function ProductsReducer (state = initialState, action) {
-  
-    const {type, payload} = action;
-  
-    switch(type) {
-  
-      case 'Change':
-        let displayedProducts = filterProducts(state.allProducts, payload);
-        return {...state, displayedProducts};
-  
-      default:
-        return state;
-  
-    }
-  } 
-  
-  const filterProducts = (products, choice) => {
-    return products.filter(product => product.category === choice);
-  }
+}
+
+export default productReducer;

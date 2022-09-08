@@ -1,8 +1,6 @@
 import { connect } from 'react-redux';
 
 function SimpleCart(props) {
-
-  console.log('props', props);
   return (
     <>
       <p>CART</p>

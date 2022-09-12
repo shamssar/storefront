@@ -9,7 +9,7 @@ This app will show static products when choosing a category.
 
 
 
-[Deployed Link](https://candid-medovik-530e64.netlify.app/)
+[Deployed Link](https://incomparable-mousse-c6f709.netlify.app/)
 
 [pull request](https://github.com/shamssar/storefront/pull/5)
 

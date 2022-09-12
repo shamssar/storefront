@@ -1,9 +1,8 @@
 import axios from 'axios';
 
 let initialState = {
-  products: [
+  products: [],
   
-  ],
 };
 
 function productReducer(state = initialState, action) {

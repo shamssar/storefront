@@ -12,7 +12,6 @@ let reducers = combineReducers({
 });
 
 
-
 let store = () => {
   return createStore(reducers, applyMiddleware(thunk));
 };

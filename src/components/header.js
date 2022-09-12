@@ -1,15 +1,39 @@
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-
-
-export default function Header() {
-
-    return (
-      <Grid container style={{ backgroundColor: 'lightgray', padding: '0 18px 0 18px'}}>
-        <Grid item xs={4}>
-        <h2>My Store</h2>
-        </Grid>
-      </Grid>
-    )
+function Header({ cart }) {
+  return (
+    <>
+      <div className="storeHeader">
+        <Link
+          to="/"
+          style={{
+            marginLeft: '2rem',
+            textDecoration: 'none',
+            fontSize: '3rem',
+            fontWeight: 'normal',
+          }}
+        >
+          MyStore
+        </Link>
+        <Link
+          to="/cart"
+          style={{
+            marginRight: '2rem',
+            textDecoration: 'none',
+            fontSize: '1.1rem',
+            fontWeight: 'normal',
+          }}
+        >
+          Cart: {cart.totalItems}
+        </Link>
+      </div>
+    </>
+  );
 }
+
+const mapStateToProps = state => ({
+  cart: state.cart,
+});
+
+export default connect(mapStateToProps)(Header);
